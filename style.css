@@ -1,0 +1,17 @@
+body{
+  font-family: 'Roboto', sans-serif;
+  background-color: #84FF00;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  color: #000000;
+  box-sizing: border-box;
+}
+
+.grid{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-areas:
+	" . apu apu apu . " ;
+	border: 1px solid black;
+}
