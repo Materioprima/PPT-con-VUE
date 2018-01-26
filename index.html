@@ -12,7 +12,15 @@
 </head>
 <body>
 	<div class="grid">
-		
+		<div id="app">
+			<h1> {{ titulo }} </h1>
+			<p><span>{{victorias}}</span>-<span>{{maquina}}</span></p>
+			<button v-on:click="jugada(0)" class="bt1 btn"><img class="foto" src="papel.png" alt=""></button>
+			<button v-on:click="jugada(1)" class="bt2 btn"><img class="foto" src="piedra.png" alt=""></button>
+			<button v-on:click="jugada(2)" class="bt3 btn"><img class="foto" src="tijeras.png" alt=""></button>
+			<p>{{resultado}}</p>
+			<img class="foto resul" v-bind:src="ppt[cpu]" alt="">
+		</div>
 	</div>
 	<script src="hacks.js" type="text/javascript" charset="utf-8" async defer></script>
 </body>

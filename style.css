@@ -12,6 +12,23 @@ body{
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	grid-template-areas:
-	" . apu apu apu . " ;
+	" app app app app app "
+	" . btn btn btn ." ;
 	border: 1px solid black;
+}
+
+#app{
+	grid-area: app;
+	text-align: center;
+}
+
+.btn{
+	grid-area: btn;
+	border-radius: 10px;
+	border: 1px solid black;
+}
+
+.foto{
+	width: 100px;
+	height: 100px;
 }
