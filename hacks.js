@@ -5,12 +5,14 @@ var app = new Vue({
 	},
 	data: {
 		titulo: 'Bienvenido a Piedra, Papel, Tijeras.',
+		titulaso: '',
 		victorias: '0',
 		maquina: '0',
 		resultado: '',
 		cpu: '',
-		ppt: ['piedra.png','papel.png','tijeras.png'],
+		ppt: ['piedra.png','papel.png','tijeras.png','win.png','lus.png'],
 		imeg: false,
+		fotofin: '',
 		fin: false
 	},
 	methods: {
@@ -35,9 +37,13 @@ var app = new Vue({
 			}
 			if(this.victorias==3){		
 				this.titulo='Felicidades, has ganado a la CPU.';
+				this.fotofin='3';
+				this.titulaso='animation';
 				this.fin=true;
 			}else if(this.maquina==3){
 				this.titulo='La CPU ha ganado, vuelve a intentarlo.';
+				this.fotofin='4';
+				this.titulaso='animation';
 				this.fin=true;
 			}
 		},
@@ -46,6 +52,7 @@ var app = new Vue({
 			this.victorias= '0';
 			this.maquina='0';
 			this.resultado='';
+			this.titulaso='';
 			this.imeg=false;
 			this.fin=false;
 		}
