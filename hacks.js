@@ -9,10 +9,13 @@ var app = new Vue({
 		maquina: '0',
 		resultado: '',
 		cpu: '',
-		ppt: ['piedra.png','papel.png','tijeras.png']
+		ppt: ['piedra.png','papel.png','tijeras.png'],
+		imeg: false,
+		fin: false
 	},
 	methods: {
 		jugada: function(valor){
+			this.imeg=true;
 			this.cpu=Math.floor(Math.random()*3);
 			let cpuplay= ', la cpu ha jugado:';
 			if(valor==0 && this.cpu==2){
@@ -31,12 +34,21 @@ var app = new Vue({
 				this.resultado='Has perdido'+cpuplay;
 			}
 			if(this.victorias==3){		
-				this.titulo='Felicidades, has ganado a la CPU';
-				reseto();
+				this.titulo='Felicidades, has ganado a la CPU.';
+				this.fin=true;
 			}else if(this.maquina==3){
-				this.titulo='La CPU ha ganado, vuelve a intentarlo';
-				reseto();
+				this.titulo='La CPU ha ganado, vuelve a intentarlo.';
+				this.fin=true;
 			}
+		},
+		reseto: function() {
+			this.titulo='Bienvenido a Piedra, Papel, Tijeras.';
+			this.victorias= '0';
+			this.maquina='0';
+			this.resultado='';
+			this.imeg=false;
+			this.fin=false;
 		}
+
 	}
 });
